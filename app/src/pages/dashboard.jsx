@@ -37,7 +37,6 @@ export const Dashboard = () => {
             <h1>Dashboard</h1>
             <button onClick={logoutUser}>Deslogar</button>
             <button onClick={refreshUser}>Refresh</button>
-            <Notifications />
         </Fragment>
     );
 };

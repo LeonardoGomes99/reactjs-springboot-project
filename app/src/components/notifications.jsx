@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNotificacoes } from '../hooks/useNotificacoes';
+import { useNotificacoes } from '../utils/hooks';
 import { toast, ToastContainer } from 'react-toastify';
 
 export const Notifications = () => {

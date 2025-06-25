@@ -15,22 +15,5 @@ public class WebConfig implements WebMvcConfigurer {
     public void configurePathMatch(PathMatchConfigurer configurer) {
         configurer.addPathPrefix("/api", HandlerTypePredicate.forAnnotation(RestController.class));
     }
-
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOrigins(
-                                "http://127.0.0.1"
-                        )
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
-                        .allowedHeaders("Authorization", "Content-Type", "Accept", "*")
-                        .allowCredentials(true)
-                        .maxAge(3600);
-            }
-        };
-    }
 }
 

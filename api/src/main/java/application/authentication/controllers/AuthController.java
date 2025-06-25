@@ -1,6 +1,5 @@
 package application.authentication.controllers;
 
-import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,10 +14,10 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
-import application.authentication.config.CustomUserDetailsService;
-import application.authentication.config.JwtUtil;
+import application.authentication.config.user.CustomUserDetailsService;
+import application.authentication.config.jwt.JwtUtil;
 import application.authentication.dto.LoginRequest;
-import application.authentication.dto.ValidationResponse;
+import application.authentication.responses.ValidationResponse;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

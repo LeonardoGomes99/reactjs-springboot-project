@@ -1,12 +1,16 @@
 
 export const url = 'http://localhost:8080';
+export const clientId = "meu-sistema";
+export const clientSecret = "segredo-supersecreto";
 
 // Fazer login e armazenar cookie HTTPOnly
 export const login = async (email, password) => {
+  const basicAuth = btoa(`${clientId}:${clientSecret}`);
   const response = await fetch(`${url}/api/login`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Authorization": `Basic ${basicAuth}`
     },
     credentials: "include",
     body: JSON.stringify({
@@ -14,13 +18,16 @@ export const login = async (email, password) => {
       password: password
     })
   });
+
   if (response.ok) {
-    return { data: "", status: 200 }
+    return { data: "", status: 200 };
   } else {
     console.error("Erro no login:", response.status);
   }
-}
+};
 
+
+// Fazer uma requisição caso o refresh token esteja inválido
 export const refresh = async () => {
   const response = await fetch(`${url}/api/refresh`, {
     method: "POST",
@@ -51,10 +58,10 @@ export const validate = async () => {
 export const logout = async () => {
   const response = await fetch(`${url}/api/logout`, {
     method: "POST",
-    credentials: "include", // inclui os cookies HttpOnly na requisição
+    credentials: "include",
   });
   if (response.ok) {
-    // Como 204 No Content não retorna JSON, não devemos chamar response.json()
+    // Como 204 No Content não retorna JSON
     return { data: null, status: response.status };
   } else {
     return { data: "", status: response.status };

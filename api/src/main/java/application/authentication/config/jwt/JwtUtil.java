@@ -1,4 +1,4 @@
-package application.authentication.config;
+package application.authentication.config.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;

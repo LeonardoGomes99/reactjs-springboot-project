@@ -1,5 +1,6 @@
-package application.authentication.config;
+package application.authentication.config.filter;
 
+import application.authentication.config.jwt.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;

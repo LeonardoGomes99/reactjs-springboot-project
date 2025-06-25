@@ -1,4 +1,4 @@
-package application.authentication.config;
+package application.authentication.config.user;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

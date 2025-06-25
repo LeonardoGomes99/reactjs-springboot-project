@@ -1,4 +1,4 @@
-package application.authentication.config;
+package application.authentication.config.liquibase;
 
 import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Value;

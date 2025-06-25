@@ -1,4 +1,4 @@
-package application.authentication.dto;
+package application.authentication.responses;
 
 import java.util.List;
 

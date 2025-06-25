@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16.0-alpine
+    container_name: postgres
+    environment:
+        POSTGRES_DB: database
+        POSTGRES_USER: administrador
+        POSTGRES_PASSWORD: 123456
+    volumes:
+        - postgres_data:/var/lib/postgresql/data
+    ports:
+        - "5432:5432"
+    networks:
+        - application
+
+volumes:
+    postgres_data:
+
+networks:
+  application:
+    driver: bridge
